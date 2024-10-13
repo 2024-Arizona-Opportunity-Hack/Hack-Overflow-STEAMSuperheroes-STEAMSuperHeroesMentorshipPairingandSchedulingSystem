@@ -19,7 +19,7 @@
 <!-- Add all team members -->
 
 ## Project Overview
-For our project with STEAM Superheroes, we focused on helping the nonprofit better manage their event participants and volunteers by creating a backend system to streamline and automate their processes. Given the organization's mission to inspire youth to pursue careers in STEAM through innovative content like comic books and educational lesson plans, they needed a more efficient way to track involvement and communication with their supporters, volunteers, and event participants.
+For our project with STEAM Superheroes, we helped the organization to automate the matching and scheduling of participants and volunteers using a backend system. Given the organization's mission to inspire youth to pursue careers in STEAM through innovative content like comic books and educational lesson plans, they needed a more efficient way to track involvement and communication with their supporters, volunteers, and event participants.
 
 **Project Inspiration**
 
