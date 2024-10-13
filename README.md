@@ -25,7 +25,7 @@ Brief description of your project and its goals.
 - Frontend: 
 - Backend: Java
 - Database: AWS DynamoDb
-- APIs: 
+- APIs: AWS
 <!-- Add/modify as needed -->
 
 
