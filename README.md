@@ -21,7 +21,8 @@
 ## Project Overview
 For our project with STEAM Superheroes, we focused on helping the nonprofit better manage their event participants and volunteers by creating a backend system to streamline and automate their processes. Given the organization's mission to inspire youth to pursue careers in STEAM through innovative content like comic books and educational lesson plans, they needed a more efficient way to track involvement and communicate with their supporters, volunteers, and event participants.
 
-**Project Inspiration**\
+**Project Inspiration**
+
 STEAM Superheroes aims to transform scientists, engineers, and researchers into inspiring figures for young people by creating comic books, lesson plans, and programs that highlight real-world scientific achievements. However, like many nonprofits, they were struggling to effectively gather and manage participant information during their events. Their existing manual process of collecting contact details on google forms led to issues with data entry errors and inefficiency in following up with participants. We sought to address this problem by building a robust backend solution to automate and simplify participant management.
 
 ## Tech Stack
