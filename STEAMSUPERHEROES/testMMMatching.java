@@ -307,6 +307,23 @@ public class testMMMatching
 		return ans;
 	}
 
+	private static boolean checkDistance(Mentor mR, Mentee mE)
+	{
+		DistanceCalculator calculator = new DistanceCalculator();
+        double distance = 0.0; // Declare the variable outside the try block
+
+        try {
+            // Call the getDistance method and assign the result
+            distance = calculator.getDistance("Phoenix", "AZ", "Tucson", "AZ");
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if(distance <= 60)
+        	return true;
+        return false;
+	}
+	
 	private static boolean checkAge(Mentor mR, Mentee mE)
 	{
 		String mentorAge = mR.age;
