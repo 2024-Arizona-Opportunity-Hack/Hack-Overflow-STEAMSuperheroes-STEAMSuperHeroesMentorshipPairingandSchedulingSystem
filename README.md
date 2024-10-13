@@ -39,7 +39,8 @@ The STEAM Superheroes Mentorship Management System we developed is designed to m
 - Backend Development: Java served as the core programming language for building the backend system, providing high performance and scalability.
 - Database: We integrated AWS DynamoDB as a reliable NoSQL database solution to ensure seamless storage and retrieval of mentor and mentee data.
 - Email Communication:
-      Jakarta Mail API: We used this API to send automated notifications to participants regarding match confirmations and scheduled meetings, enhancing communication efficiency.
+
+  Jakarta Mail API: We used this API to send automated notifications to participants regarding match confirmations and scheduled meetings, enhancing communication efficiency.
   
 ## Challenges and Learnings
 
