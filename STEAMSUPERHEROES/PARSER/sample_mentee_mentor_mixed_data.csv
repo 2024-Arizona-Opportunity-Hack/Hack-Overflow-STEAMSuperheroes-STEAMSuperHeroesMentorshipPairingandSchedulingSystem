@@ -1,0 +1,5 @@
+Type,Name,Age,Email,Phone,City,State,Session Preference,Ethnicity,Ethnicity Preference,Gender,Gender Preference,Mentor Method,Role,STEAM Background,Academic Level,Profession,Current Employer,Mentor Reasons,Mentees to Advice,Calendar Availability,Specified Date
+Mentor,John Doe,40,johndoe@example.com,1234567890,New York,NY,STEAM Career Guidance,Asian,No Preference,Male,No Preference,Online,Engineer,Yes,Bachelor's,Software Engineer,Google,Give back to community,2-3,Weekdays,2024-12-01
+Mentee,Alice Smith,22,alice.smith@example.com,9876543210,Boston,MA,Homework Help,Hispanic,No Preference,Female,Same Gender,In-person,Student,,Undergraduate,,,,,Weekends,2024-11-15
+Mentor,Michael Johnson,50,mjohnson@example.com,1122334455,Chicago,IL,General Mentorship,White,Same Ethnicity,Male,No Preference,Online,Consultant,No,PhD,Consultant,Self-employed,Mentoring experience,1-2,Weekdays,2024-11-20
+Mentee,Emily Davis,20,edavis@example.com,5566778899,Houston,TX,Career Guidance,African American,No Preference,Female,Same Gender,In-person,Student,,Undergraduate,,,,,Weekdays,2024-11-25
