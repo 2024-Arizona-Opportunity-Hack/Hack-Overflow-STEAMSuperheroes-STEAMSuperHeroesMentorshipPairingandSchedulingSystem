@@ -8,20 +8,19 @@ import java.util.List;
 
 public class Mentor {
     //page 1
-
     private String id;
     private String timeStamp;
-    private String name;
-    private String age;
+    public String name;
+    public String age;
     private String email;
     private String phone;
     private String city;
     private String state;
-    private String sessionPreference;
-    private String ethnicity;
-    private String ethnicityPreference;
-    private String gender;
-    private String genderPreference;
+    public String sessionPreference;
+    public String ethnicity;
+    public String ethnicityPreference;
+    public String gender;
+    public String genderPreference;
     private String mentorMethod;
     private String role;
 
@@ -37,15 +36,17 @@ public class Mentor {
     private List<String> calendarAvailability = new ArrayList<>();
     private List<String> specifiedDates;
 
-    public String getIsMatched() {
-        return isMatched;
+    public String pairName;
+    public boolean paired;
+
+    public boolean getIsMatched() {
+        return paired;
     }
 
-    public void setIsMatched(String isMatched) {
-        this.isMatched = isMatched;
+    public void setIsMatched(boolean isMatched) {
+        this.paired = isMatched;
     }
 
-    private String isMatched;
 
     public String getId() {
         return id;
@@ -231,9 +232,12 @@ public class Mentor {
         this.specifiedDates = specifiedDate;
     }
 
-    public Mentor(){
-        this.id = UUID.randomUUID().toString();
+    public Mentor(boolean generateUUID) {
+        if (generateUUID) {
+            this.id = UUID.randomUUID().toString();
+        }
     }
+    public Mentor() {}
 }
 
 

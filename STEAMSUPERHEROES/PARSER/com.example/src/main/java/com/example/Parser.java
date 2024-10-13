@@ -42,7 +42,7 @@ public class Parser {
             role = role.substring(0, role.indexOf(" "));
 
             if (role.equals("Mentor")) {
-                Mentor mentor = new Mentor();
+                Mentor mentor = new Mentor(true);
                 mentor.setTimeStamp(row.getCell(0).toString());
                 mentor.setEmail(row.getCell(1).getStringCellValue());
                 mentor.setName(row.getCell(2).getStringCellValue());
@@ -118,13 +118,13 @@ public class Parser {
                 Cell c2 = row.getCell(32);
                 if (c2 == null || c2.getCellType() != CellType.STRING)
                 {
-                    mentor.setIsMatched("False");
+                    mentor.setIsMatched(false);
                 }
                 System.out.println(mentor);
                 dynamoDB.addMentorToTable(mentor);
             }
             else {
-                Mentee mentee = new Mentee();
+                Mentee mentee = new Mentee(true);
                 mentee.setTimeStamp(row.getCell(0).toString());
                 mentee.setEmail(row.getCell(1).getStringCellValue());
                 mentee.setName(row.getCell(2).getStringCellValue());
@@ -193,7 +193,7 @@ public class Parser {
                 Cell c2 = row.getCell(32);
                 if (c2 == null || c2.getCellType() != CellType.STRING)
                 {
-                    mentee.setIsMatched("False");
+                    mentee.setIsMatched(false);
                 }
                 dynamoDB.addMenteeToTable(mentee);
 

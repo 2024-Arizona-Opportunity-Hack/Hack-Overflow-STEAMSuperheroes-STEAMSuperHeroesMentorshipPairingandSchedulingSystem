@@ -59,7 +59,7 @@ public class DynamoDB {
         }
         item.put("Specified-Dates", AttributeValue.builder().l(attributeValueList2).build());
 
-        item.put("Matched", AttributeValue.builder().s(mentor.getIsMatched()).build());
+        item.put("Matched", AttributeValue.builder().bool(mentor.getIsMatched()).build());
 
 
         PutItemRequest putItemRequest = PutItemRequest.builder()
@@ -106,7 +106,9 @@ public class DynamoDB {
         }
         item.put("Specified-Dates", AttributeValue.builder().l(attributeValueList2).build());
 
-        item.put("Matched", AttributeValue.builder().s(mentee.getIsMatched()).build());
+//
+//
+        item.put("Matched", AttributeValue.builder().bool(mentee.getIsMatched()).build());
 
         PutItemRequest putItemRequest = PutItemRequest.builder()
                 .tableName("Mentee")  // Replace with your DynamoDB table name
@@ -121,12 +123,12 @@ public class DynamoDB {
     }
 
 
-    public List<String> getValidMentees(String tableName) {
-        List<String> resultArray = new ArrayList<>();
+    public List<Mentee> getValidMentees(String tableName) {
+        List<Mentee> resultArray = new ArrayList<>();
         try {
             String filterExpression = "Matched = :matchedVal";
             Map<String, AttributeValue> expressionAttributeValues = new HashMap<>();
-            expressionAttributeValues.put(":matchedVal", AttributeValue.builder().s("False").build());
+            expressionAttributeValues.put(":matchedVal", AttributeValue.builder().bool(false).build());
 
             ScanRequest scanRequest = ScanRequest.builder()
                     .tableName(tableName)
@@ -137,26 +139,111 @@ public class DynamoDB {
             ScanResponse scanResponse = dynamoDbClient.scan(scanRequest);
 
 
-
             for (Map<String, AttributeValue> item : scanResponse.items()) {
-                for (Map.Entry<String, AttributeValue> entry : item.entrySet()) {
-                    AttributeValue attributeValue = entry.getValue();
+                Mentee mentee = new Mentee();
 
-                    if (attributeValue.s() != null) {
-                        resultArray.add(attributeValue.s());
-                    }
-                    else if (attributeValue.l() != null) {
-                        for (AttributeValue listItem : attributeValue.l()) {
-                            resultArray.add(listItem.s());
-                        }
-                    }
+                mentee.setId(item.get("ID").s());
+                mentee.setName(item.get("Name").s());
+                mentee.setEmail(item.get("Email").s());
+                mentee.setAge(item.get("Age").s());
+                mentee.setPhone(item.get("Phone").s());
+                mentee.setCity(item.get("City").s());
+                mentee.setState(item.get("State").s());
+                mentee.setAcademicLevel(item.get("Academic-Level").s());
+                mentee.setGender(item.get("Gender").s());
+                mentee.setGenderPreference(item.get("Gender-Preferences").s());
+                mentee.setEthnicity(item.get("Ethnicity").s());
+                mentee.setEthnicityPreference(item.get("Ethnicity-Preferences").s());
+                mentee.setGrade(item.get("Grade").s());
+                mentee.setIsMatched(item.get("Matched").bool());
+                mentee.setReasons(item.get("Mentee-Reasons").s());
+                mentee.setMentorMethod(item.get("Mentor-Method").s());
+                mentee.setRole(item.get("Role").s());
+                mentee.setSessionTypePreference(item.get("Session-Preferences").s());
+                mentee.setBackground(item.get("Steam-Background").s());
+
+                List<AttributeValue> calendarAvailabilityList = item.get("Calendar-Availability").l();
+                for (AttributeValue availabilityItem : calendarAvailabilityList) {
+                    mentee.setCalendarAvailability(availabilityItem.s());  // Get the string value from each AttributeValue
                 }
-            }
 
+                List<AttributeValue> specificDates = item.get("Specified-Dates").l();
+                List<String> specificDateList = new ArrayList<>();
+                for (AttributeValue specificDateItem : specificDates) {
+                    specificDateList.add(specificDateItem.s());
+                }
+                mentee.setSpecifiedDate(specificDateList);
+
+                resultArray.add(mentee);
+            }
         } catch (DynamoDbException e) {
             System.err.println("Failed to query DynamoDB: " + e.getMessage());
         }
         return resultArray;
 
     }
+
+
+    public List<Mentor> getValidMentor(String tableName) {
+        List<Mentor> resultArray = new ArrayList<>();
+        try {
+            String filterExpression = "Matched = :matchedVal";
+            Map<String, AttributeValue> expressionAttributeValues = new HashMap<>();
+            expressionAttributeValues.put(":matchedVal", AttributeValue.builder().bool(false).build());
+
+            ScanRequest scanRequest = ScanRequest.builder()
+                    .tableName(tableName)
+                    .filterExpression(filterExpression)
+                    .expressionAttributeValues(expressionAttributeValues)
+                    .build();
+
+            ScanResponse scanResponse = dynamoDbClient.scan(scanRequest);
+
+
+            for (Map<String, AttributeValue> item : scanResponse.items()) {
+                Mentor mentor = new Mentor();
+
+                mentor.setId(item.get("ID").s());
+                mentor.setName(item.get("Name").s());
+                mentor.setEmail(item.get("Email").s());
+                mentor.setPhone(item.get("Phone").s());
+                mentor.setAge(item.get("Age").s());
+                mentor.setCity(item.get("City").s());
+                mentor.setState(item.get("State").s());
+                mentor.setAcademicLevel(item.get("Academic-Level").s());
+                mentor.setGender(item.get("Gender").s());
+                mentor.setGenderPreference(item.get("Gender-Preferences").s());
+                mentor.setEthnicity(item.get("Ethnicity").s());
+                mentor.setEthnicityPreference(item.get("Ethnicity-Preferences").s());
+                mentor.setCurrentEmployer(item.get("Current-Employer").s());
+                mentor.setIsMatched(item.get("Matched").bool());
+                mentor.setMenteesToAdvice(item.get("MenteesToAdvise").s());
+                mentor.setMentorReasons(item.get("Mentor-Reasons").s());
+                mentor.setMentorMethod(item.get("Mentor-Method").s());
+                mentor.setRole(item.get("Role").s());
+                mentor.setProfession(item.get("Profession").s());
+                mentor.setSessionPreference(item.get("Session-Preferences").s());
+                mentor.setSteamBackground(item.get("Steam-Background").s());
+
+                List<AttributeValue> calendarAvailabilityList = item.get("Calendar-Availability").l();
+                for (AttributeValue availabilityItem : calendarAvailabilityList) {
+                    mentor.setCalendarAvailability(availabilityItem.s());  // Get the string value from each AttributeValue
+                }
+
+                List<AttributeValue> specificDates = item.get("Specified-Dates").l();
+                List<String> specificDateList = new ArrayList<>();
+                for (AttributeValue specificDateItem : specificDates) {
+                    specificDateList.add(specificDateItem.s());
+                }
+                mentor.setSpecifiedDates(specificDateList);
+
+                resultArray.add(mentor);
+            }
+        } catch (DynamoDbException e) {
+            System.err.println("Failed to query DynamoDB: " + e.getMessage());
+        }
+        return resultArray;
+
+    }
+
 }

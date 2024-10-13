@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public class Mentee {
     //page 1
-    private String id;
+    public String id;
 
     public String getTimeStamp() {
         return timeStamp;
@@ -26,11 +26,11 @@ public class Mentee {
     }
 
     public String getSessionTypePreference() {
-        return sessionTypePreference;
+        return sessionPreference;
     }
 
     public void setSessionTypePreference(String sessionTypePreference) {
-        this.sessionTypePreference = sessionTypePreference;
+        this.sessionPreference = sessionTypePreference;
     }
 
     public String getBackground() {
@@ -41,14 +41,14 @@ public class Mentee {
         this.background = background;
     }
 
-    private String timeStamp;
-    private String email;
-    private String name;
-    private String age;
-    private String phone;
-    private String city;
-    private String state;
-    private String sessionTypePreference;
+    public String timeStamp;
+    public String email;
+    public String name;
+    public String age;
+    public String phone;
+    public String city;
+    public String state;
+    public String sessionPreference;
 
     public String getAcademicLevel() {
         return academicLevel;
@@ -59,10 +59,10 @@ public class Mentee {
     }
 
     private String academicLevel;
-    private String ethnicity;
-    private String ethnicityPreference;
-    private String gender;
-    private String genderPreference;
+    public String ethnicity;
+    public String ethnicityPreference;
+    public String gender;
+    public String genderPreference;
     private String mentorMethod;
     private String role;
 
@@ -76,20 +76,29 @@ public class Mentee {
     private List<String> calendarAvailability = new ArrayList<>();
     private List<String> specifiedDate;
 
-    public String getIsMatched() {
-        return isMatched;
+    public Boolean getIsMatched() {
+        return paired;
     }
 
-    public void setIsMatched(String isMatched) {
-        this.isMatched = isMatched;
+    public void setIsMatched(Boolean isMatched) {
+        this.paired = isMatched;
     }
 
-    private String isMatched;
+    public String pairName;
+
+    public boolean paired;
 
     // Constructor with all parameters
 
-    public Mentee () {
-        this.id = UUID.randomUUID().toString();
+    public Mentee(boolean genUUID) {
+        if (genUUID) {
+            this.id = UUID.randomUUID().toString();
+        }
+    }
+
+    public Mentee()
+    {
+
     }
 
     public String getName() {
