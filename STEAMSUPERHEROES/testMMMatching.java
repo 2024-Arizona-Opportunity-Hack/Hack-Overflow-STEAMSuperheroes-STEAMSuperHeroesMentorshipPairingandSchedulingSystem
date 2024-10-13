@@ -1,4 +1,4 @@
-package testMMMatching;
+package com.emailProject;
 import java.util.*;
 
 public class testMMMatching 
@@ -212,7 +212,7 @@ public class testMMMatching
 		{
 			if(m.paired)
 			{
-				Pair p = new Pair(m.name, m.pairName);
+				Pair p = new Pair(m.name, m.pairNamem, m.email);
 				pairs.add(p);
 			}
 		}
