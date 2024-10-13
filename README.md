@@ -23,15 +23,33 @@ For our project with STEAM Superheroes, we focused on helping the nonprofit bett
 
 **Project Inspiration**
 
-STEAM Superheroes aims to transform scientists, engineers, and researchers into inspiring figures for young people by creating comic books, lesson plans, and programs that highlight real-world scientific achievements. However, like many nonprofits, they were struggling to effectively gather and manage participant information during their events. Their existing manual process of collecting contact details on google forms led to issues with data entry errors and inefficiency in following up with participants. We sought to address this problem by building a robust backend solution to automate and simplify participant management.
+As a team, we were inspired by STEAM Superheroes' mission to ignite passion for careers in STEAM (Science, Technology, Engineering, Arts, and Mathematics) among youth through engaging content like comic books and educational programs. We recognized that, like many nonprofits, they faced challenges in efficiently managing participant information during their events. Their reliance on manual processes for collecting contact details led to data entry errors and inefficiencies in following up with participants. We wanted to create a solution that would streamline their operations and help them better connect with their community.
 
-## Tech Stack
-- Frontend: 
-- Backend: Java
-- Database: AWS DynamoDb
-- APIs: AWS
-<!-- Add/modify as needed -->
+## What It Does
+The STEAM Superheroes Mentorship Management System we developed is designed to match mentors with mentees according to their preferences and facilitate meeting scheduling. By automating these processes, our system enhances the mentorship experience for both parties and improves overall program management.
 
+**Key Features**
+
+1. Mentor-Mentee Matching: The system matches mentors with mentees based on their stated preferences, including age, subject expertise, and mentoring type. This ensures that each mentee is paired with a mentor who is well-suited to their needs.
+2. Automated Meeting Scheduling: Once a match is made, the system facilitates the scheduling of meetings between mentors and mentees, streamlining the process and reducing the need for back-and-forth communication.
+3. Participant Tracking: Our solution maintains a database of participants, allowing the organization to track mentor and mentee involvement and interactions easily.
+4. Feedback Collection: After meetings, participants can provide feedback, which the system organizes to help assess the effectiveness of the mentorship program and identify areas for improvement.
+
+## Technology Stack
+- Backend Development: Java served as the core programming language for building the backend system, providing high performance and scalability.
+- Database: We integrated AWS DynamoDB as a reliable NoSQL database solution to ensure seamless storage and retrieval of mentor and mentee data.
+- Email Communication:
+      Jakarta Mail API: We used this API to send automated notifications to participants regarding match confirmations and scheduled meetings, enhancing communication efficiency.
+  
+## Challenges and Learnings
+
+As a team, we encountered challenges in structuring the database to effectively manage mentor-mentee relationships and ensuring smooth data flow within the system. Working on this project deepened my understanding of backend development and the importance of automation in enhancing user experiences. Collaborating with my team was invaluable, as we combined our strengths to overcome technical hurdles and deliver a functional solution.
+
+## Next Steps
+
+In the future, we plan to develop a user-friendly frontend interface that will allow mentors and mentees to interact with the system seamlessly. This will enable participants to view their matches, schedule meetings, and provide feedback through an intuitive platform. We also aim to incorporate advanced features, such as personalized notifications based on participant profiles and analytics to improve the overall mentorship program.
+
+By automating the mentor-mentee matching and meeting scheduling processes, our project significantly contributes to STEAM Superheroes' mission of inspiring the next generation of scientists and engineers. This experience has reinforced our commitment to creating impactful solutions that facilitate mentorship and learning opportunities for youth in the STEAM community.
 
 ## Getting Started
 Instructions on how to set up and run your project locally.
