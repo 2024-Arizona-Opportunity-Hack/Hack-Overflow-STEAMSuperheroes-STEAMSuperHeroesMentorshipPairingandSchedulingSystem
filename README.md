@@ -11,9 +11,10 @@
 @Bhavana Kannan (on Slack)
 
 ## Team "Hack Overflow"
-- [Team Member 1](GitHub profile link)
-- [Team Member 2](GitHub profile link)
-- [Team Member 3](GitHub profile link)
+- Trushant Gautam(GitHub profile link)
+- Logan Reny (GitHub profile link)
+- Shubh (GitHub profile link)
+- Alexandre Cayer (GitHub profile link)
 <!-- Add all team members -->
 
 ## Project Overview
@@ -22,7 +23,7 @@ Brief description of your project and its goals.
 ## Tech Stack
 - Frontend: 
 - Backend: 
-- Database: 
+- Database: AWS DynamoDb
 - APIs: 
 <!-- Add/modify as needed -->
 
