@@ -1,5 +1,5 @@
 
-# 2024_fall Hackathon Project
+# 2024_Fall Hackathon Project
 
 ## Quick Links
 - [Hackathon Details](https://www.ohack.dev/hack/2024_fall)
