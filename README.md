@@ -12,7 +12,7 @@
 
 ## Team "Hack Overflow"
 - Bhavana Kannan [(GitHub profile link)](https://github.com/BK5102)
-- Trushant Gautam (GitHub profile link)
+- Trushant Gautam [(GitHub profile link)](https://github.com/Trushant29)
 - Logan Reny (GitHub profile link)
 - Shubh (GitHub profile link)
 - Alexandre Cayer (GitHub profile link)
