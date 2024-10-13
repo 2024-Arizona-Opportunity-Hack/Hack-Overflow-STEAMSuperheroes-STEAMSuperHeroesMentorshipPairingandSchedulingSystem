@@ -1,5 +1,5 @@
 
-# 2024_Fall Hackathon Project
+# 2024_Fall Hackathon Project_STEAM SuperHeroes Mentorship Management System
 
 ## Quick Links
 - [Hackathon Details](https://www.ohack.dev/hack/2024_fall)
