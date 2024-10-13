@@ -6,7 +6,7 @@ public class testMMMatching
 	public static void main(String args[])
 	{
 		Mentor A = new Mentor("Alex", "40", "chocolatecake@gmail.com", "123-456-7890", "Chandler", "AZ", 
-                  "College guidance", "White or European: Includes German, Irish, English, Italian, Polish, and French", "Prefer it, but available to others as needed", 
+                  "College guidance", "White or European: Includes German, Irish, English, Italian, Polish, and French", "Prefer it, but available to others as needed",
                   "Cisgender Male", "Do not have a preference. Either is fine.", "Web conference (ie. Zoom video conference)", "Mentor (the person providing guidance)",
                   "Student", "Graduate School", "N/A", "N/A", 
                   "Give back to community", "1", "7am to 9am", 
@@ -19,7 +19,7 @@ public class testMMMatching
 		        "4809990987",
 		        "Phoenix",
 		        "Arizona",
-		        "Career Guidance",
+		        "Career guidance",
 		        "South Asian: Includes Indian, Pakistan, Sri Lankan, Bangladesh",
 		        "Prefer NOT to be matched within that similarity",
 		        "Cisgender Female",
@@ -157,6 +157,7 @@ public class testMMMatching
 					//System.out.println("check ethnicity: " + checkEthnicity(w, m));
 					//System.out.println("check gender: " + checkGender(w, m));
 					//if they match
+					/*System.out.println("check age " + checkAge(w,m) + checkMentoringType(w,m));*/
 					if(checkEthnicity(w, m) && checkGender(w, m) && checkAge(w, m) && checkMentoringType(w, m))//checkAddressAgeMentor(w, m) && 
 					{
 						//System.out.println("name?: " + w.name);
@@ -212,8 +213,14 @@ public class testMMMatching
 		{
 			if(m.paired)
 			{
-				Pair p = new Pair(m.name, m.pairName);
-				pairs.add(p);
+				for(Mentee n: mentees)
+				{
+					if(n.name.equals(m.pairName))
+					{
+						Pair p = new Pair(m.name, m.pairName,m.email, n.email);
+						pairs.add(p);
+					}
+				}
 			}
 		}
 		return pairs;
@@ -310,38 +317,42 @@ public class testMMMatching
 	private static boolean checkDistance(Mentor mR, Mentee mE)
 	{
 		DistanceCalculator calculator = new DistanceCalculator();
-        double distance = 0.0; // Declare the variable outside the try block
+		double distance = 0.0; // Declare the variable outside the try block
 
-        try {
-            // Call the getDistance method and assign the result
-            distance = calculator.getDistance("Phoenix", "AZ", "Tucson", "AZ");
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        if(distance <= 60)
-        	return true;
-        return false;
+		try {
+			// Call the getDistance method and assign the result
+			distance = calculator.getDistance("Phoenix", "AZ", "Tucson", "AZ");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if(distance <= 60)
+			return true;
+		return false;
 	}
-	
 	private static boolean checkAge(Mentor mR, Mentee mE)
 	{
 		String mentorAge = mR.age;
 		String menteeAge = mE.age;
 		String[] agesMR = mentorAge.split("-");
 		String[] agesME = menteeAge.split("-");
-		
-		if(mR.sessionPreference.equals("Homework Help")
-				&& Integer.parseInt(agesMR[1]) >= Integer.parseInt(agesME[1]))
+		if(agesMR.length>0 && agesME.length>0)
 		{
+			if(mR.sessionPreference.equals("Homework Help")
+					&& Integer.parseInt(agesMR[0]) >= Integer.parseInt(agesME[0]))
+			{
+				return true;
+			}
+
+			if(Integer.parseInt(agesMR[0]) > Integer.parseInt(agesME[0]))
+			{
+				return true;
+			}
+
+		}
+		else {
 			return true;
 		}
-		
-		if(Integer.parseInt(agesMR[1]) > Integer.parseInt(agesME[1]))
-		{
-			return true;
-		}
-		
 		return false;
 	}
 	
