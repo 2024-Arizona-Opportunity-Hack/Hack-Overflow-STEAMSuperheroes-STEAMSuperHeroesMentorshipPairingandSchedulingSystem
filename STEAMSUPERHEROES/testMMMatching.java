@@ -1,4 +1,4 @@
-package com.emailProject;
+package testMMMatching;
 import java.util.*;
 
 public class testMMMatching 
@@ -157,7 +157,7 @@ public class testMMMatching
 					//System.out.println("check ethnicity: " + checkEthnicity(w, m));
 					//System.out.println("check gender: " + checkGender(w, m));
 					//if they match
-					if(checkAddressAgeMentor(w, m) && checkEthnicity(w, m) && checkGender(w, m))
+					if(checkEthnicity(w, m) && checkGender(w, m) && checkAge(w, m) && checkMentoringType(w, m))//checkAddressAgeMentor(w, m) && 
 					{
 						//System.out.println("name?: " + w.name);
 						//add them as a pair
@@ -212,7 +212,7 @@ public class testMMMatching
 		{
 			if(m.paired)
 			{
-				Pair p = new Pair(m.name, m.pairNamem, m.email);
+				Pair p = new Pair(m.name, m.pairName);
 				pairs.add(p);
 			}
 		}
@@ -307,53 +307,53 @@ public class testMMMatching
 		return ans;
 	}
 
-	//address, age, and mentoring type
-	//TODO: Distance check
-	//TODO: Mentor Type Check
-	private static boolean checkAddressAgeMentor(Mentor mR, Mentee mE)
+	private static boolean checkAge(Mentor mR, Mentee mE)
 	{
-		boolean ans = true;
-		//address
-		//***how?
-
-		//if()//within 60 miles of each other
-		//{//need to find out the address if possible, otherwise we will need to adjust Google Form
-
-		//}
-		int a1 = Integer.parseInt(mR.age);
-		int a2 = Integer.parseInt(mE.age);
-		//age
-		if(a1 > a2)//mentor age > mentee age
+		String mentorAge = mR.age;
+		String menteeAge = mE.age;
+		String[] agesMR = mentorAge.split("-");
+		String[] agesME = menteeAge.split("-");
+		
+		if(mR.sessionPreference.equals("Homework Help")
+				&& Integer.parseInt(agesMR[1]) >= Integer.parseInt(agesME[1]))
 		{
-
+			return true;
 		}
-		else return false;
-		int ageDiff = a1 - a2;
-		//List<String> sessionPrefs = new ArrayList<String>();
-		if(mR.sessionPreference.contains("homework help") && ageDiff >= 2)//mentor type == 'homework help' && ageDiff >= 2
+		
+		if(Integer.parseInt(agesMR[1]) > Integer.parseInt(agesME[1]))
 		{
-
+			return true;
 		}
-		else if(ageDiff >= 10)//ageDiff >= 10
-		{
-
-		}
+		
+		return false;
+	}
+	
+	
+	private static boolean checkMentoringType(Mentor mR, Mentee mE)
+	{
 		//mentoring type
-		/*
-		for(String mT : )//mentoringType i : mentee
+		String sp = mR.sessionPreference;
+		String[] categories = sp.split(",");
+		
+		String[] categoriesE = mE.sessionPreference.split(",");
+		
+		for(String category : categories)//mentoringType i : mentee
 		{
-			if()//mentor.mentoringType.contains(mentee.mentoringType[i])
+			for(String cat : categoriesE)
 			{
-
+				if(cat.equals(category))//mentor.mentoringType.contains(mentee.mentoringType[i])
+				{
+					return true;
+				}
 			}
 
 
 		}
-		 */
 		
-		return ans;
-
+		return false;
+		
 	}
+	
 
 	private static boolean checkEthnicity(Mentor mR, Mentee mE)
 	{
