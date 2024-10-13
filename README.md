@@ -42,7 +42,7 @@ The STEAM Superheroes Mentorship Management System we developed is designed to m
   
 ## Challenges and Learnings
 
-As a team, we encountered challenges in structuring the database to effectively manage mentor-mentee relationships and ensuring smooth data flow within the system. Working on this project deepened my understanding of backend development and the importance of automation in enhancing user experiences. Collaborating with my team was invaluable, as we combined our strengths to overcome technical hurdles and deliver a functional solution.
+As a team, we encountered challenges in structuring the database to effectively manage mentor-mentee relationships and ensuring smooth data flow within the system. Working on this project deepened our understanding of backend development and the importance of automation in enhancing user experiences. Collaborating together was invaluable, as we combined our strengths to overcome technical hurdles and deliver a functional solution.
 
 ## Next Steps
 
@@ -55,8 +55,8 @@ Instructions on how to set up and run your project locally.
 
 ```bash
 # Example commands
-git clone [your-repo-link]
-cd [your-repo-name]
+git clone [[your-repo-link]](https://github.com/2024-Arizona-Opportunity-Hack/Hack-Overflow-STEAMSuperheroes-STEAMSuperHeroesMentorshipPairingandSchedulingSystem) 
+cd Hack-Overflow-STEAMSuperheroes-STEAMSuperHeroesMentorshipPairingandSchedulingSystem
 npm install
 npm start
 ```
