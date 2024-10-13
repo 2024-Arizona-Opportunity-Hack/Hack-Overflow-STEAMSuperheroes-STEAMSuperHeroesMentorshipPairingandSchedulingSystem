@@ -11,7 +11,7 @@
 @Bhavana Kannan (on Slack)
 
 ## Team "Hack Overflow"
-- Bhavana Kannan (GitHub profile link)
+- Bhavana Kannan [(GitHub profile link)](https://github.com/BK5102)
 - Trushant Gautam (GitHub profile link)
 - Logan Reny (GitHub profile link)
 - Shubh (GitHub profile link)
