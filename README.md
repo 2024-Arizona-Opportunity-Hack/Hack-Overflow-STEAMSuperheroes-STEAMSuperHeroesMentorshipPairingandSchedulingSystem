@@ -14,7 +14,7 @@
 - Bhavana Kannan [(GitHub profile link)](https://github.com/BK5102)
 - Trushant Gautam [(GitHub profile link)](https://github.com/Trushant29)
 - Logan Reny [(GitHub profile link)](https://github.com/gregv)
-- Shubh [(GitHub profile link)](https://github.com/Shubh2k01)
+- Shubh Arora [(GitHub profile link)](https://github.com/Shubh2k01)
 - Alexandre Cayer [(GitHub profile link)](https://github.com/acayer)
 <!-- Add all team members -->
 
